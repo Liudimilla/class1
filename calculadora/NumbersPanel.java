@@ -10,15 +10,17 @@ import javax.swing.JTextField;
 
 public class NumbersPanel extends JPanel implements ActionListener{
 	
-	private JTextField txtText;
+	private JTextField txtText; // para passar as informaçoes do painel texto
 	
 	public NumbersPanel(JTextField txtText) {
 		this.txtText = txtText;
 		
+		// para colocar os botoes em grade 3x4; Linha 4 coluna 3 
 		setLayout(new GridLayout(4, 3));
 		
+		//definiçao de botoes.::
 		JButton btn1 = new JButton("1");
-		btn1.addActionListener(this);
+		btn1.addActionListener(this);//para tratar o evento dos botoes, implementar ActionListener, e add o metodo
 		add(btn1);
 		
 		JButton btn2 = new JButton("2");
@@ -61,15 +63,15 @@ public class NumbersPanel extends JPanel implements ActionListener{
 		btn0.addActionListener(this);
 		add(btn0);
 		
-		JButton btnEmpty2 = new JButton();
+		JButton btnEmpty2 = new JButton(); //para desabilitar o botao fazio.
 		btnEmpty2.setEnabled(false);
 		add(btnEmpty2);
 				
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		
+	public void actionPerformed(ActionEvent e) { //metodo do ActionListener
+		//para retorna o numero que foi clicado
 		if(txtText.getText().length() == 10) {
 			return;
 		}
