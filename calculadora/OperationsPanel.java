@@ -57,18 +57,18 @@ public class OperationsPanel extends JPanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		// para fazer o calculo
 		if(txtText.getText().isEmpty()) {
 			return;
 		}
 		
-		JButton btn = (JButton) e.getSource();
+		JButton btn = (JButton) e.getSource();// o botao que disparou o evento
 		
-		if (btn == btnClear) {
+		if (btn == btnClear) {//para limpa a tela.
 			op = '\u0000';
 			txtText.setText("");
 			
-		} else if (btn == btnEq) {
+		} else if (btn == btnEq) {// partir para a conta
 			value2 = Double.parseDouble(txtText.getText());
 			
 			double result = 0.0;
@@ -81,12 +81,12 @@ public class OperationsPanel extends JPanel implements ActionListener {
 				result = value1 * value2;
 			} else if (op == '/') {
 				result = value1 / value2;
-			}
+			} // faz a operaçao e mostra o resultado ;
 			txtText.setText(String.valueOf(result));
 			op = '\u0000';
 			value1 = result;
 			value2 = 0;
-		} else {
+		} else { 
 			op = btn.getText().charAt(0);
 			value1 = Double.parseDouble(txtText.getText());
 			txtText.setText("");
